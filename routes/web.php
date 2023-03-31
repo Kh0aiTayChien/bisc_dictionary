@@ -17,7 +17,8 @@ Route::get('/', 'WordController@homepage')->name('index');
 Route::get('/search', 'WordController@search')->name('admin.search');
 Route::post('/result', 'WordController@result')->name('admin.result');
 
-Route::get('/register17092019', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::get('/register17092019', [RegisterController::class, 'showRegistrationForm']);
+Route::post('/register17092019', [RegisterController::class, 'register'])->name('register');
 Auth::routes(
   ['register' => false],
 );
