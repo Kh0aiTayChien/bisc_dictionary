@@ -29,8 +29,12 @@ class HomeController extends Controller
         $words = Word::count();
         $totalSearchCount = Word::sum('view_count');
         $data = Word::orderBy('view_count', 'desc')->first();
-        $obj = json_decode($data);
-        $mostViewedWord = $obj->name;
+        if ($data !== null) {
+            $obj = json_decode($data);
+            $mostViewedWord = $obj->name;
+        } else {
+            $mostViewedWord = '';
+        }
         $widget = [
             'users' => $users,
             'words' => $words,
