@@ -8,45 +8,22 @@
         color: #ffc107 !important; /* đổi màu chữ khi hover sang màu vàng */
     }
 
-    .shake {
-        animation: shake 0.5s infinite;
+    .scale {
+        animation: scale 0.8s infinite alternate;
     }
 
-    @keyframes shake {
+    @keyframes scale {
         0% {
-            transform: translate(1px, -2px) rotate(-1deg);
-        }
-        10% {
-            transform: translate(-1px, 2px) rotate(-1deg);
-        }
-        20% {
-            transform: translate(1px, 2px) rotate(0deg);
-        }
-        30% {
-            transform: translate(3px, 2px) rotate(0deg);
-        }
-        40% {
-            transform: translate(1px, -1px) rotate(1deg);
+            transform: scale(1);
         }
         50% {
-            transform: translate(-1px, -2px) rotate(-1deg);
-        }
-        60% {
-            transform: translate(-3px, 1px) rotate(0deg);
-        }
-        70% {
-            transform: translate(3px, 1px) rotate(-1deg);
-        }
-        80% {
-            transform: translate(-1px, -1px) rotate(1deg);
-        }
-        90% {
-            transform: translate(-3px, 0px) rotate(1deg);
+            transform: scale(1.1);
         }
         100% {
-            transform: translate(1px, 1px) rotate(0deg);
+            transform: scale(1);
         }
     }
+
     .modal {
         display: none;
         position: fixed;
@@ -96,6 +73,7 @@
     }
     .open-san{
         font-family: 'Open Sans', sans-serif;
+        font-size: 1.5rem;
     }
 
 </style>
@@ -105,35 +83,29 @@
             <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
                 <h2 class="footer-heading"><a href="https://bisc.edu.vn/" class="logo">
                         <img src="{{(asset('img/logo-footer.png'))}}" style="width: 109px; height: 25px"></a></h2>
+                <p>BISC, đối tác đào tạo của ACCA & ICAEW </p>
 
-                <a href="https://bisc.edu.vn/" class="py-1 d-block">https://bisc.edu.vn/</a>
             </div>
             <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
-                <h2 class="footer-heading open-san">Về chúng tôi</h2>
+                <h2 class="footer-heading open-san">VỀ CHÚNG TÔI</h2>
                 <ul class="list-unstyled">
                     <li>
                         <div class="py-1 d-block">
-                            <p> Trung tâm đào tạo BISC - Đối tác đào tạo chuẩn Vàng của ACCA </p>
-                        </div>
+                            <p>Tiên phong tại Việt Nam
+                                trong việc triển khai các khóa học về Kế toán - Kiểm toán - Tài chính bằng phương pháp Blended Learning </p>
+                            </div>
                     </li>
                     <li>
                         <div class="py-1 d-block">
-                            <a href="https://bisconline.edu.vn/" class="py-1 d-block shake">Khóa học Kế Kiểm miễn
-                                phí </a>
+                            <a href="https://bisconline.edu.vn/" class="py-1 d-block btn btn-outline-success text-light scale">KHÓA HỌC KẾ KIỂM MIỄN PHÍ </a>
                         </div>
                     </li>
                 </ul>
 
             </div>
             <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
-                <h2 class="footer-heading open-san">Liên hệ</h2>
+                <h2 class="footer-heading open-san">LIÊN HỆ</h2>
                 <ul class="list-unstyled">
-                    <li>
-                        <div class="py-1 d-block">Email: training@bisc.edu.vn</div>
-                    </li>
-                    <li>
-                        <div class="py-1 d-block"> Tầng 4, tòa nhà Lakeview, 71 Chùa Láng, Đống Đa, Hà Nội</div>
-                    </li>
                     <li><a href="tel:085 8822 168" class="call-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                  class="bi bi-telephone-outbound-fill" viewBox="0 0 16 16">
@@ -142,6 +114,29 @@
                             </svg>
                             085 8822 168</a></li>
                     <li></li>
+                    <a href="https://bisc.edu.vn/" class="py-1 d-block">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-link-45deg" viewBox="0 0 16 16">
+                            <path d="M4.715 6.542 3.343 7.914a3 3 0 1 0 4.243 4.243l1.828-1.829A3 3 0 0 0 8.586 5.5L8 6.086a1.002 1.002 0 0 0-.154.199 2 2 0 0 1 .861 3.337L6.88 11.45a2 2 0 1 1-2.83-2.83l.793-.792a4.018 4.018 0 0 1-.128-1.287z"/>
+                            <path d="M6.586 4.672A3 3 0 0 0 7.414 9.5l.775-.776a2 2 0 0 1-.896-3.346L9.12 3.55a2 2 0 1 1 2.83 2.83l-.793.792c.112.42.155.855.128 1.287l1.372-1.372a3 3 0 1 0-4.243-4.243L6.586 4.672z"/>
+                        </svg>
+                        https://bisc.edu.vn/</a>
+                    <li>
+                        <div class="py-1 d-block">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                            </svg>
+                            training@bisc.edu.vn</div>
+                    </li>
+
+                    <li>
+                        <div class="py-1 d-block">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-building-add" viewBox="0 0 16 16">
+                                <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0Z"/>
+                                <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v6.5a.5.5 0 0 1-1 0V1H3v14h3v-2.5a.5.5 0 0 1 .5-.5H8v4H3a1 1 0 0 1-1-1V1Z"/>
+                                <path d="M4.5 2a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm-6 3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm-6 3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Zm3 0a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1Z"/>
+                            </svg>
+                            Tầng 4, tòa nhà Lakeview, 71 Chùa Láng, Đống Đa, Hà Nội</div>
+                    </li>
                 </ul>
             </div>
             <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
