@@ -7,7 +7,9 @@
     a:hover {
         color: #ffc107 !important; /* đổi màu chữ khi hover sang màu vàng */
     }
-
+    .white-hover:hover{
+        color: white !important;
+    }
     .scale {
         animation: scale 0.8s infinite alternate;
     }
@@ -83,21 +85,19 @@
             <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
                 <h2 class="footer-heading"><a href="https://bisc.edu.vn/" class="logo">
                         <img src="{{(asset('img/logo-footer.png'))}}" style="width: 109px; height: 25px"></a></h2>
-                <p>BISC, đối tác đào tạo của ACCA & ICAEW </p>
-
             </div>
             <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
                 <h2 class="footer-heading open-san">VỀ CHÚNG TÔI</h2>
                 <ul class="list-unstyled">
                     <li>
                         <div class="py-1 d-block">
-                            <p>Tiên phong tại Việt Nam
+                            <p>Đơn vị tiên phong tại Việt Nam
                                 trong việc triển khai các khóa học về Kế toán - Kiểm toán - Tài chính bằng phương pháp Blended Learning </p>
                             </div>
                     </li>
                     <li>
                         <div class="py-1 d-block">
-                            <a href="https://bisconline.edu.vn/" class="py-1 d-block btn btn-outline-success text-light scale">KHÓA HỌC KẾ KIỂM MIỄN PHÍ </a>
+                            <a href="https://bisconline.edu.vn/" class="py-1 d-block btn btn-outline-warning text-light scale white-hover">KHÓA HỌC KẾ KIỂM MIỄN PHÍ </a>
                         </div>
                     </li>
                 </ul>
