@@ -77,12 +77,16 @@
         font-family: 'Open Sans', sans-serif;
         font-size: 1.5rem;
     }
+    .open-san-sm{
+        font-family: 'Open Sans', sans-serif;
+        font-size: 1rem;
+    }
 
 </style>
 <footer class="footer mt-auto py-3 fixed-bottom text-light" style="background-color: #143444">
     <div class="container">
-        <div class="row">
-            <div class="col-md-6 col-lg-3 mb-md-0 mb-4">
+        <div class="row gx-5">
+            <div class="col-md-6 col-lg-3 mb-md-0 mb-4 d-flex justify-content-center">
                 <h2 class="footer-heading"><a href="https://bisc.edu.vn/" class="logo">
                         <img src="{{(asset('img/logo-footer.png'))}}" style="width: 109px; height: 25px"></a></h2>
             </div>
@@ -91,13 +95,12 @@
                 <ul class="list-unstyled">
                     <li>
                         <div class="py-1 d-block">
-                            <p>Đơn vị tiên phong tại Việt Nam
-                                trong việc triển khai các khóa học về Kế toán - Kiểm toán - Tài chính bằng phương pháp Blended Learning </p>
+                            <p>Đơn vị tiên phong triển khai các khóa học về Kế toán - Kiểm toán - Tài chính bằng phương pháp Blended Learning tại Việt Nam</p>
                             </div>
                     </li>
                     <li>
                         <div class="py-1 d-block">
-                            <a href="https://bisconline.edu.vn/" class="py-1 d-block btn btn-outline-warning text-light scale white-hover">KHÓA HỌC KẾ KIỂM MIỄN PHÍ </a>
+                            <a href="https://bisconline.edu.vn/" class="py-1 d-block btn btn-outline-warning text-light scale white-hover open-san-sm">KHÓA HỌC KẾ KIỂM MIỄN PHÍ </a>
                         </div>
                     </li>
                 </ul>
