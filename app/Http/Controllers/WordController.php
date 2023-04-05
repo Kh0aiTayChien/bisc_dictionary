@@ -154,7 +154,8 @@ class WordController extends Controller
     {
         $file = $request->file('file');
         $import = new WordsImport();
-        Excel::import($import, $file);
+        Excel::import($import, $file, null, \Maatwebsite\Excel\Excel::XLSX); //Thêm tham số thứ ba và thứ tư
+
         if (count($import->getErrors()) > 0) {
             $errors = implode("<br>", $import->getErrors());
             return redirect('admin/words')->withErrors(['message' => 'Import thất bại: ' . $errors]);

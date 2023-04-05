@@ -18,6 +18,7 @@ class WordsImport implements ToCollection, WithHeadingRow, WithMapping
     }
     public function collection(Collection $rows)
     {
+//        dd($rows);
         $rules = [
             'name' => 'required|string|max:255|unique:words,name',
             'pronunciation' => 'string',
@@ -25,7 +26,6 @@ class WordsImport implements ToCollection, WithHeadingRow, WithMapping
             'definition' => 'required|string',
             'example' => 'string|nullable',
         ];
-//        dd($rows->toArray());
         foreach ($rows as $index => $row) {
             $validator = Validator::make($row->toArray(), $rules);
             if ($validator->fails()) {
