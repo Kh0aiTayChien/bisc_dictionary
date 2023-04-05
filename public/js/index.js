@@ -46,17 +46,18 @@ $('#search-form').submit(function(event) {
                 result.empty();
                 result.append
                 (
-                    '<div>' + '<p>' + '<strong>' + response.name+ '&ensp;/'+ response.pronunciation + '</strong>' + '</p>' + '</div>' +
-                    '<hr>' +
+                    '<div>' + '<p>' + '<strong>' + response.name+ '</strong>' + '</p>' + '</div>' +
+                    '<div>' + '<p>' + '/' + response.pronunciation + '/' + '</p>' + '</div>' +
+                '<hr>' +
                     '<div>' + '<p>' + '<strong>' + 'Loại Từ:&ensp;' + '</strong>' + response.classes + '</p>' + '</div>' +
                     '<div>' + '<p>' + '<strong>' + 'Định Nghĩa:&ensp;' + '</strong>' + response.definition + '</p>' + '</div>'+
                     '<div>' + '<p>' + '<strong>' + 'Ví dụ :&ensp;' + '</strong>' + response.example + '</p>' + '</div>'
                 );
-                if(response.example != null){
-
-                }
-                else{
+                if (response.example == null) {
                     result.find('div:last-child').remove();
+                }
+                if (response.pronunciation == null) {
+                    result.find('div:nth-child(2)').remove();
                 }
             }
         },

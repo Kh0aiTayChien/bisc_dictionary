@@ -7,7 +7,8 @@ use Illuminate\Support\Collection;
 use Maatwebsite\Excel\Concerns\ToCollection;
 use Illuminate\Support\Facades\Validator;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
-class WordsImport implements ToCollection, WithHeadingRow
+use Maatwebsite\Excel\Concerns\WithMapping;
+class WordsImport implements ToCollection, WithHeadingRow, WithMapping
 {
     protected $errors = [];
 
@@ -46,5 +47,15 @@ class WordsImport implements ToCollection, WithHeadingRow
     public function getErrors()
     {
         return $this->errors;
+    }
+    public function map($row): array
+    {
+        return [
+            'name' => $row['word'] ?? $row['name'],
+            'pronunciation' => $row['pronunciation'],
+            'classes' => $row['classes'] ?? $row['class'],
+            'definition' => $row['definition'],
+            'example' => $row['example'],
+        ];
     }
 }

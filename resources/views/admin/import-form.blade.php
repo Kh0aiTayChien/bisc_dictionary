@@ -25,7 +25,7 @@
 
     <form action="{{route('admin.word.import')}}" method="POST" enctype="multipart/form-data">
         @csrf
-        <label>Choose excel file, have 5 information: Word - Pronunciation - Class - Definition - Example </label>
+        <label>Choose excel file, have 5 information in the first row (header): Word - Pronunciation - Class - Definition - Example </label>
         <br>
         <input type="file" name="file">
         <br><br>
