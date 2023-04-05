@@ -20,25 +20,23 @@ class WordsImport implements ToCollection, WithHeadingRow, WithMapping
     {
         $rules = [
             'name' => 'required|string|max:255|unique:words,name',
-            'pronunciation' => 'string|nullable',
+            'pronunciation' => 'string',
             'classes' => 'required|string|max:255',
             'definition' => 'required|string',
             'example' => 'string|nullable',
         ];
-
+//        dd($rows->toArray());
         foreach ($rows as $index => $row) {
             $validator = Validator::make($row->toArray(), $rules);
-
             if ($validator->fails()) {
                 $this->errors[] = "Row $index: " . implode(", ", $validator->errors()->all());
             } else {
-                $word = new Word([
-                    'name' => $row['name'] ?? $row['word'],
-                    'pronunciation'=> $row['pronunciation'],
-                    'classes' => $row['classes'] ?? $row['class'],
-                    'definition' => $row['definition'],
-                    'example' => $row['example'],
-                ]);
+                $word = new Word;
+                $word->name = $row['name'] ?? $row['word'];
+                $word->pronunciation = $row['pronunciation'];
+                $word->classes =  $row['classes'] ?? $row['class'];
+                $word->definition = $row['definition'];
+                $word->example = $row['example'];
                 $word->save();
             }
         }
