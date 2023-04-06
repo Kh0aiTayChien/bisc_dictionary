@@ -21,8 +21,8 @@ class WordsImport implements ToCollection, WithHeadingRow, WithMapping
 //        dd($rows);
         $rules = [
             'name' => 'required|string|max:255|unique:words,name',
-            'pronunciation' => 'string',
-            'classes' => 'required|string|max:255',
+            'pronunciation' => 'nullable',
+            'classes' => 'nullable|string|max:255',
             'definition' => 'required|string',
             'example' => 'string|nullable',
         ];
@@ -34,7 +34,7 @@ class WordsImport implements ToCollection, WithHeadingRow, WithMapping
                 $word = new Word;
                 $word->name = $row['name'] ?? $row['word'];
                 $word->pronunciation = $row['pronunciation'];
-                $word->classes =  $row['classes'] ?? $row['class'];
+                $word->classes =  $row['classes'] ?? $row['class'] ?? null;
                 $word->definition = $row['definition'];
                 $word->example = $row['example'];
                 $word->save();

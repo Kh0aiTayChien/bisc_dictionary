@@ -6,12 +6,19 @@ body {
     padding: 0;
     overflow-x: hidden; /* Hide horizontal scrollbar */
 }
-
 .header {
     background-color: #fcbc14;
     height: 80px;
     width: 100%;
     opacity: 80%
+}
+.content{
+    height: 65vh;
+}
+@media screen and (max-width: 1366px){
+    .content{
+        height: 82vh;
+    }
 }
 
 ul.menu li {
@@ -85,18 +92,14 @@ option {
     padding: 0px 2px 1px;
 }
 
-
-/*#result {*/
-/*    margin-top: 10px;*/
-/*    border: 1px solid #ccc;*/
-/*    padding: 10px;*/
-/*}*/
-
 .logo_body {
     display: flex;
-    /*background-color: grey;*/
-    /*width: 85%;*/
     padding-top: 6%;
+}
+@media screen and (max-width: 1366px){
+    .logo_body {
+        padding-top: 1%;
+    }
 }
 
 .icon {

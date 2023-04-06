@@ -83,7 +83,7 @@
     }
 
 </style>
-<footer class="footer mt-auto py-3 fixed-bottom text-light" style="background-color: #143444">
+<footer class="footer mt-auto py-3 text-light" style="background-color: #143444">
     <div class="container">
         <div class="row gx-5">
             <div class="col-md-6 col-lg-3 mb-md-0 mb-4 d-flex justify-content-center">

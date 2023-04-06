@@ -1,4 +1,4 @@
-<div>
+<section class="content">
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     <div class="logo_body justify-content-center">
         <img class="icon" src="{{asset('img/logo.png')}}">
@@ -19,4 +19,4 @@
         <div class="result col-md-6 offset-md-3 h-75 p-5"></div>
     </div>
     <script src="{{asset('js/index.js')}}"></script>
-</div>
+</section>

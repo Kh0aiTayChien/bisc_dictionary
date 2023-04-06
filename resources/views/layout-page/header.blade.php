@@ -3,36 +3,36 @@
         <ion-icon class="toggle_menu nav_menu" name="menu"></ion-icon>
 {{--        <label class="logo"><a href="#home"><img class="logo_header"--}}
 {{--                                                 src="{{asset('img/logo.png')}}"></a></label>--}}
-        <ul class="menu hidden">
-            <li><a href="#">Contact</a></li>
-            <li><a href="#">About</a></li>
-            <li><a type="button" data-bs-toggle="modal" href="#LoginForm">
-                    Login
-                </a></li>
-        </ul>
+{{--        <ul class="menu hidden">--}}
+{{--            <li><a href="#">Contact</a></li>--}}
+{{--            <li><a href="#">About</a></li>--}}
+{{--            <li><a type="button" data-bs-toggle="modal" href="#LoginForm">--}}
+{{--                    Login--}}
+{{--                </a></li>--}}
+{{--        </ul>--}}
     </nav>
 </section>
-<script>
-    const toggleButton = document.querySelector('.toggle_menu');
-    const navMenu = document.querySelector('nav ul');
-    const navLinks = document.querySelectorAll('nav ul li a');
+{{--<script>--}}
+{{--    const toggleButton = document.querySelector('.toggle_menu');--}}
+{{--    const navMenu = document.querySelector('nav ul');--}}
+{{--    const navLinks = document.querySelectorAll('nav ul li a');--}}
 
-    toggleButton.addEventListener('click', function() {
-        navMenu.classList.toggle('hidden');
-    });
+{{--    toggleButton.addEventListener('click', function() {--}}
+{{--        navMenu.classList.toggle('hidden');--}}
+{{--    });--}}
 
-    //Thêm trình nghe sự kiện click cho mỗi liên kết trong danh sách
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            navMenu.classList.toggle('hidden'); //Thêm class 'hidden' để ẩn danh sách
-        });
-    });
+{{--    //Thêm trình nghe sự kiện click cho mỗi liên kết trong danh sách--}}
+{{--    navLinks.forEach(link => {--}}
+{{--        link.addEventListener('click', function() {--}}
+{{--            navMenu.classList.toggle('hidden'); //Thêm class 'hidden' để ẩn danh sách--}}
+{{--        });--}}
+{{--    });--}}
 
-    window.addEventListener('scroll', function() {
-        var header = document.querySelector('.header_mob');
-        // header.style.backgroundColor = (window.pageYOffset > 0) ? 'grey' : 'transparent';
-    });
-</script>
+{{--    window.addEventListener('scroll', function() {--}}
+{{--        var header = document.querySelector('.header_mob');--}}
+{{--        // header.style.backgroundColor = (window.pageYOffset > 0) ? 'grey' : 'transparent';--}}
+{{--    });--}}
+{{--</script>--}}
 
 
 {{--<div class="modal fade" id="LoginForm" tabindex="-1" aria-labelledby="LoginForm" aria-hidden="true">--}}
