@@ -157,10 +157,10 @@ class WordController extends Controller
         Excel::import($import, $file, null, \Maatwebsite\Excel\Excel::XLSX); //Thêm tham số thứ ba và thứ tư
 
         if (count($import->getErrors()) > 0) {
-            $errors = implode("<br>", $import->getErrors());
-            return redirect('admin/words')->withErrors(['message' => 'Import thất bại: ' . $errors]);
+            $errors = implode(",", $import->getErrors());
+            return redirect('admin/words')->withErrors(['message' => 'Import fail: ' . $errors]);
         } else {
-            return redirect('admin/words')->with('success', 'Import thành công');
+            return redirect('admin/words')->with('success', 'Import success');
         }
     }
     public function homepage()

@@ -26,18 +26,28 @@ class WordsImport implements ToCollection, WithHeadingRow, WithMapping
             'definition' => 'required|string',
             'example' => 'string|nullable',
         ];
+
+        $messages = [
+            'unique' => "The ':input' has already been taken.",
+        ];
+
+        $rows = $rows->filter(function ($row) {
+            return !empty(array_filter($row->toArray()));
+        })->values();
+
         foreach ($rows as $index => $row) {
-            $validator = Validator::make($row->toArray(), $rules);
+            $validator = Validator::make($row->toArray(), $rules, $messages);
             if ($validator->fails()) {
-                $this->errors[] = "Row $index: " . implode(", ", $validator->errors()->all());
+                $this->errors[] = "Word number " . ($index + 1) . ": " . implode(", ", $validator->errors()->all());
             } else {
-                $word = new Word;
-                $word->name = $row['name'] ?? $row['word'];
-                $word->pronunciation = $row['pronunciation'];
-                $word->classes =  $row['classes'] ?? $row['class'] ?? null;
-                $word->definition = $row['definition'];
-                $word->example = $row['example'];
-                $word->save();
+
+                Word::create([
+                    'name' => $row['name'] ?? $row['word'],
+                    'pronunciation' => $row['pronunciation'],
+                    'classes' => $row['classes'] ?? $row['class'] ?? null,
+                    'definition' => $row['definition'],
+                    'example' => $row['example']
+                ]);
             }
         }
     }
@@ -49,7 +59,7 @@ class WordsImport implements ToCollection, WithHeadingRow, WithMapping
     public function map($row): array
     {
         return [
-            'name' => $row['word'] ?? $row['name'],
+            'name' => $row['name'] ?? $row['word'] ,
             'pronunciation' => $row['pronunciation'],
             'classes' => $row['classes'] ?? $row['class'],
             'definition' => $row['definition'],
