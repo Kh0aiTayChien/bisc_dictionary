@@ -16,7 +16,7 @@
 }
 
 .autocomplete-suggestion:hover {
-    background-color: yellow;
+    background-color: #ffc107;
 }
 
 .autocomplete-suggestions b {
