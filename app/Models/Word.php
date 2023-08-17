@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Word extends Model
 {
     use HasFactory;
-    protected $fillable = ['name', 'classes', 'definition', 'example'];
+    protected $fillable = ['name', 'classes', 'pronunciation', 'definition', 'example'];
 }
 

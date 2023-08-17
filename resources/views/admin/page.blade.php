@@ -28,8 +28,8 @@
                 <td class="col-lg-3">{{ Str::limit($word->definition, 100) }}</td>
                 <td class="col-lg-3">{{ Str::limit($word->example, 100) }}</td>
                 <td class="col-lg-1">
-                    <a href="{{ route('words.edit',compact('word', $word->id)) }} " class="btn btn-warning">
-                        EDIT
+                    <a href="{{ route('words.edit', ['word' => $word->id]) }} " class="btn btn-warning">
+                    EDIT
                         <i class="fa fa-magic" aria-hidden="true"></i>
                     </a>
                 </td>

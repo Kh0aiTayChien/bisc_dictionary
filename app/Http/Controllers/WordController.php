@@ -67,12 +67,11 @@ class WordController extends Controller
         $word = new Word;
         $word->name = $validatedData['name'];
         $arr = $transcriber->transcribe($validatedData['name']);
-        $phonemes = implode('', $arr);
 
         $word->classes = $validatedData['classes'];
         $word->definition = $validatedData['definition'];
         $word->example = $request->input('example');
-        $word->pronunciation = $request->input('pronunciation') ?? $phonemes;
+        $word->pronunciation = $request->input('pronunciation');
 
         $word->save();
 

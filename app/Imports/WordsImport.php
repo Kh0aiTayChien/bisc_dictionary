@@ -34,14 +34,12 @@ class WordsImport implements ToCollection, WithHeadingRow, WithMapping
         $rows = $rows->filter(function ($row) {
             return !empty(array_filter($row->toArray()));
         })->values();
-
         foreach ($rows as $index => $row) {
             $validator = Validator::make($row->toArray(), $rules, $messages);
             if ($validator->fails()) {
                 $this->errors[] = "Word number " . ($index + 1) . ": " . implode(", ", $validator->errors()->all());
             } else {
-
-                Word::create([
+                 Word::create([
                     'name' => $row['name'] ?? $row['word'],
                     'pronunciation' => $row['pronunciation'],
                     'classes' => $row['classes'] ?? $row['class'] ?? null,
